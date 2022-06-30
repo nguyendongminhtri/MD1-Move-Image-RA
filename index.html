@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+
+    </title>
+    <style>
+        img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<img id="luffy" style="position: relative; top: 0px; left: 0px" src="image/luffy.webp" height="200px" width="200px"/>
+<button onclick="moveRight()">Move Right</button>
+<button onclick="moveLeft()">Move Left</button>
+<button onclick="moveUp()">Move Up</button>
+<button onclick="moveDown()">Move Down</button>
+<script>
+    let image = document.getElementById('luffy');
+
+    function moveRight() {
+        image.style.left = parseInt(image.style.left) + 10 + 'px';
+    }
+
+    function moveLeft() {
+        image.style.left = parseInt(image.style.left) - 10 + 'px';
+    }
+
+    function moveUp() {
+        image.style.top = parseInt(image.style.top) - 10 + 'px';
+    }
+
+    function moveDown() {
+        image.style.top = parseInt(image.style.top) + 10 + 'px';
+    }
+
+    function moveWithKeyboard(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                moveLeft();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 38:
+                moveUp();
+                break;
+            case 40:
+                moveDown();
+                break;
+        }
+    }
+    window.addEventListener('keydown',moveWithKeyboard);
+</script>
+
+</body>
+</html>
